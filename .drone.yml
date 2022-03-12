@@ -12,4 +12,5 @@ steps:
 - name: memtest
   image: messeb/valgrind
   commands: 
+    - ls
     - valgrind ./app
