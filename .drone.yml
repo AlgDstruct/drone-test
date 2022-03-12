@@ -15,6 +15,9 @@ steps:
 
 - name: feedback
   image: jmccann/drone-github-comment:1
+  settings:
+    api_token:
+      from_secret: api_token
   when: 
     event: pull_request
   message_file: valgrind.txt
