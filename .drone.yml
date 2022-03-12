@@ -10,6 +10,6 @@ steps:
     - ./app
 
 - name: memtest
-  image: gcc
+  image: messeb/valgrind
   commands: 
     - valgrind ./app
