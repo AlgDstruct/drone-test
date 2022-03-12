@@ -1,0 +1,10 @@
+kind: pipeline
+name: build-my-site
+type: docker
+
+steps:
+- name: build
+  image: alpine
+  commands:
+    - make
+    - ./a.out
