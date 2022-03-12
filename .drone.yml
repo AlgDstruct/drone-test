@@ -4,7 +4,7 @@ type: docker
 
 steps:
 - name: build
-  image: conanio/gcc7
+  image: gcc
   commands:
     - make
     - ./app
