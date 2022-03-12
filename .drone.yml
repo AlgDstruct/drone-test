@@ -17,3 +17,6 @@ steps:
   image: leins275/alg-dstruct
   commands:
     - ./a.out
+  depends_on:
+    - memcheck
+    - build
