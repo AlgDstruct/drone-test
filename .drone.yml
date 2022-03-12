@@ -4,7 +4,7 @@ type: docker
 
 steps:
 - name: build
-  image: alpine
+  image: ubuntu
   commands:
     - make
     - ./a.out
