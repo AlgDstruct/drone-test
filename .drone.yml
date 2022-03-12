@@ -15,8 +15,8 @@ steps:
 
 - name: feedback
   image: jmccann/drone-github-comment:1
-  environment:
-    api_token: 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
+  settings:
+    api_key: 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
   when: 
     event: pull_request
   message: "Done!"
