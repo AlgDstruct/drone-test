@@ -13,14 +13,6 @@ steps:
   commands:
     - valgrind --leak-check=full ./a.out > valgrind.txt
 
-- name: run
-  image: leins275/alg-dstruct
-  commands:
-    - ./a.out
-  depends_on:
-    - memcheck
-    - build
-
 - name: feedback
   image: jmccann/drone-github-comment:1
   when: 
