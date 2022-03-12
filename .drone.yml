@@ -4,7 +4,7 @@ type: docker
 
 steps:
 - name: build
-  image: ubuntu
+  image: conanio/gcc7
   commands:
     - apt update -y && apt install make gcc -y
     - make
