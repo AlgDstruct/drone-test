@@ -6,6 +6,5 @@ steps:
 - name: build
   image: conanio/gcc7
   commands:
-    - apt update -y && apt install make gcc -y
     - make
     - ./a.out
