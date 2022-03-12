@@ -11,7 +11,7 @@ steps:
 - name: memcheck
   image: leins275/alg-dstruct
   commands:
-    - valgrind --leak-check=full ./a.out
+    - valgrind --leak-check=full ./a.out > valgrind.txt
 
 - name: run
   image: leins275/alg-dstruct
@@ -20,3 +20,9 @@ steps:
   depends_on:
     - memcheck
     - build
+
+- name: feedback
+  image: jmccann/drone-github-comment:1
+  when: 
+    event: pull_request
+  message_file: valgrind.txt
