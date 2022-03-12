@@ -4,8 +4,16 @@ type: docker
 
 steps:
 - name: build
-  image: gcc
+  image: leins275/alg-dstruct
   commands:
     - make
-    - ./app
-    - valgrind ./app
+
+- name: memcheck
+  image: leins275/alg-dstruct
+  commands:
+    - valgrind ./a.out
+
+- name: run
+  image: leins275/alg-dstruct
+  commands:
+    - ./a.out
