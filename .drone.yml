@@ -11,7 +11,7 @@ steps:
 - name: memcheck
   image: leins275/alg-dstruct
   commands:
-    - valgrind ./a.out
+    - valgrind --leak-check=full./a.out
 
 - name: run
   image: leins275/alg-dstruct
