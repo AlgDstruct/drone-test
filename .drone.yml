@@ -11,7 +11,7 @@ steps:
 - name: memcheck
   image: leins275/alg-dstruct
   commands:
-    - valgrind --leak-check=full ./a.out > valgrind.txt
+    - valgrind --leak-check=full ./a.out
 
 - name: feedback
   image: jmccann/drone-github-comment:1
@@ -20,4 +20,4 @@ steps:
       from_secret: api_token
   when: 
     event: pull_request
-  message_file: valgrind.txt
+  message: "Done!"
