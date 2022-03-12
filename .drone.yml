@@ -18,5 +18,5 @@ steps:
   settings:
     api_key: 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
   when: 
-    event: push
+    event: pull_request
   message: "Done!"
