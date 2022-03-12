@@ -8,9 +8,4 @@ steps:
   commands:
     - make
     - ./app
-
-- name: memtest
-  image: valgrind
-  commands: 
-    - ls -al
-    - sudo valgrind ./app
+    - valgrind ./app
