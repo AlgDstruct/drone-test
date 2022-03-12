@@ -7,4 +7,4 @@ steps:
   image: conanio/gcc7
   commands:
     - make
-    - ./a.out
+    - sudo ./a.out
