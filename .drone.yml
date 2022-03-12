@@ -13,4 +13,4 @@ steps:
   image: messeb/valgrind
   commands: 
     - ls -al
-    - valgrind ./app
+    - sudo valgrind ./app
