@@ -8,3 +8,8 @@ steps:
   commands:
     - make
     - ./app
+
+- name: memtest
+  image: gcc
+  commands: 
+    - valgrind ./app
