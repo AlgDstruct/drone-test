@@ -10,7 +10,7 @@ steps:
     - ./app
 
 - name: memtest
-  image: messeb/valgrind
+  image: valgrind
   commands: 
     - ls -al
     - sudo valgrind ./app
