@@ -6,4 +6,6 @@ pipeline:
     when:
       event: pull_request
     image: jmccann/drone-github-comment:1
+    api_key:
+      from_secret: api-key
     message: Hello World!
