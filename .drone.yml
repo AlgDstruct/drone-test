@@ -14,7 +14,7 @@ steps:
     - valgrind --leak-check=full ./a.out
 
 - name: feedback
-  image: jmccann/drone-github-comment:1
+  image: jmccann/drone-github-comment:1.1
   settings:
     api_key: 
       from_secret: api-key
