@@ -13,8 +13,8 @@ steps:
   commands:
     - valgrind --leak-check=full ./a.out
 
-- generate-comment:
-  image: alpine:3.7
+- name: generate-comment
+  image: alpine
   commands:
     - echo "Hello World from File!" > comment.txt
 
