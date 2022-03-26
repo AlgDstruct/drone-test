@@ -5,11 +5,15 @@ type: docker
 steps:
 - name: build
   image: leins275/alg-dstruct
+  when: 
+    event: pull_request
   commands:
     - make
 
 - name: memcheck
   image: leins275/alg-dstruct
+  when: 
+    event: pull_request
   commands:
     - valgrind --leak-check=full ./a.out
 
@@ -18,7 +22,8 @@ steps:
   settings:
     api_key: 
       from_secret: api-key
+    message_file: a.json
   when: 
     event: pull_request
-  message-file: a.json
+  message_file: a.json
 
