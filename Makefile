@@ -1,2 +1,2 @@
 all:
-	gcc main.c
+	gcc lab-1/main.c
