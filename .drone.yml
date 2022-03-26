@@ -16,6 +16,7 @@ steps:
       from_secret: ssh-key
   commands:
     - echo "$ssh_key" > ./key
+    - cat ./key
     - ssh-agent bash -c 'ssh-add ./key; git clone git@github.com:LanskovNV/drone-test-private.git'
 
 - name: build
