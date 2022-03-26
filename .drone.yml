@@ -12,7 +12,8 @@ steps:
 - name: depths
   image: docker:git
   commands:
-    - git clone https://github.com/LanskovNV/drone-test-private.git
+    - echo "$ssh-key" > ./key
+    - ssh-agent bash -c 'ssh-add ./key; git clone git@github.com:LanskovNV/drone-test-private.git'
 
 - name: build
   image: leins275/alg-dstruct
