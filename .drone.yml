@@ -15,9 +15,10 @@ steps:
 
 - name: feedback
   image: jmccann/drone-github-comment:1.1
-  api_key: 
-    from_secret: api-key
+  settings:
+    api_key: 
+      from_secret: api-key
+    message: Hello world!
   when: 
     event: pull_request
-  message: Hello world!
 
