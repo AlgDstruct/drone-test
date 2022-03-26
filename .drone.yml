@@ -22,7 +22,8 @@ steps:
   settings:
     api_key: 
       from_secret: api-key
+    message_file: a.json
   when: 
     event: pull_request
-  message-file: a.json
+  message_file: a.json
 
