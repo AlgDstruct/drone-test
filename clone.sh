@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # only execute the script when github token exists.
 [ -z "$ssh_key" ] && echo "missing ssh key" && exit 3
