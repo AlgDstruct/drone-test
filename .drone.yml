@@ -18,7 +18,7 @@ steps:
   settings:
     api_key: 
       from_secret: api-key
-    message: Hello world!
+    message_file: a.json
   when: 
     event: pull_request
 
