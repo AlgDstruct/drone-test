@@ -17,7 +17,7 @@ steps:
 - name: memcheck
   image: leins275/alg-dstruct
   commands:
-    - valgrind --leak-check=full ./a.out | tee valgrind_output.txt
+    - valgrind --leak-check=full ./a.out > valgrind_output.txt
 
 - name: feedback
   image: jmccann/drone-github-comment:1.1
