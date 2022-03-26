@@ -2,6 +2,12 @@ kind: pipeline
 name: build-my-site
 type: docker
 
+trigger:
+  branch:
+    - main
+  event:
+    - pull_request
+
 steps:
 - name: build
   image: leins275/alg-dstruct
@@ -19,6 +25,4 @@ steps:
     api_key: 
       from_secret: api-key
     message_file: a.json
-  when: 
-    event: pull_request
 
