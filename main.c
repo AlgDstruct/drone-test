@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(void) {
-	printf("Hello, wor\n");
+	printf("Hello, world\n");
 	// malloc(1);
 	return 0;
 }
