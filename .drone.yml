@@ -16,7 +16,9 @@ steps:
       from_secret: ssh-key
   commands:
     - echo "$ssh_key" > ./key
-    - ssh-agent $(ssh-add ./key; git clone git@github.com:LanskovNV/drone-test-private.git)
+    - eval `ssh-agent`
+    - ssh-add ./key
+    - git clone git@github.com:LanskovNV/drone-test-private.git
 
 - name: build
   image: leins275/alg-dstruct
