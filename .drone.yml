@@ -1,8 +1,28 @@
-pipeline:
-  github-comment:
-    when:
-      event: pull_request
-    image: jmccann/drone-github-comment:1
-    api_key:
+kind: pipeline
+name: build-my-site
+type: docker
+
+trigger:
+  branch:
+    - main
+  event:
+    - pull_request
+
+steps:
+- name: build
+  image: leins275/alg-dstruct
+  commands:
+    - make
+
+- name: memcheck
+  image: leins275/alg-dstruct
+  commands:
+    - valgrind --leak-check=full ./a.out
+
+- name: feedback
+  image: jmccann/drone-github-comment:1.1
+  settings:
+    api_key: 
       from_secret: api-key
-    message: Hello World!
+    message_file: a.json
+
