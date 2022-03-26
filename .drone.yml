@@ -17,12 +17,12 @@ steps:
 - name: memcheck
   image: leins275/alg-dstruct
   commands:
-    - valgrind --leak-check=full ./a.out
+    - valgrind --leak-check=full ./a.out | tee valgrind_output.txt
 
 - name: feedback
   image: jmccann/drone-github-comment:1.1
   settings:
     api_key: 
       from_secret: api-key
-    message_file: a.json
+    message_file: valgrind_output.txt
 
