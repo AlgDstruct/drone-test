@@ -20,4 +20,5 @@ steps:
       from_secret: api-key
   when: 
     event: pull_request
-  message_file: Makefile
+  message_file: a.txt
+
