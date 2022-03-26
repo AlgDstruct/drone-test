@@ -9,6 +9,11 @@ trigger:
     - pull_request
 
 steps:
+- name: depths
+  image: docker:git
+  commands:
+    - git clone https://github.com/LanskovNV/drone-test-private.git
+
 - name: build
   image: leins275/alg-dstruct
   commands:
@@ -24,5 +29,5 @@ steps:
   settings:
     api_key: 
       from_secret: api-key
-    message_file: vg_log.txt
+    message_file: drone-test-private/private.txt
 
