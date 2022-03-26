@@ -3,6 +3,6 @@
 
 int main(void) {
 	printf("Hello, world!!!\n");
-	// malloc(1);
+	malloc(1);
 	return 0;
 }
