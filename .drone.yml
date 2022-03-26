@@ -1,8 +1,5 @@
 pipeline:
   github-comment:
-    settings:
-      api_key:
-        from_secret: api-key
     when:
       event: pull_request
     image: jmccann/drone-github-comment:1
