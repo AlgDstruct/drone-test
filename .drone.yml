@@ -13,6 +13,11 @@ steps:
   commands:
     - valgrind --leak-check=full ./a.out
 
+- generate-comment:
+  image: alpine:3.7
+  commands:
+    - echo "Hello World from File!" > comment.txt
+
 - name: feedback
   image: jmccann/drone-github-comment:1
   settings:
@@ -20,4 +25,4 @@ steps:
       from_secret: api-key
   when: 
     event: pull_request
-  message: "Done!"
+  message_file: comment.txt
