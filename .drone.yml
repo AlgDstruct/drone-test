@@ -17,6 +17,7 @@ steps:
   commands:
     - echo "$ssh_key" > ./key
     - chmod 600 ./key
+    - eval `ssh-agent`
     - ssh-add ./key
     - git clone git@github.com:LanskovNV/drone-test-private.git
 
