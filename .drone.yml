@@ -15,7 +15,6 @@ steps:
     ssh_key:
       from_secret: ssh-key
   commands:
-    - [ -z "$ssh_key" ] && echo "missing ssh key" && exit 3
     - mkdir /root/.ssh
     - echo -n "$ssh_key" > /root/.ssh/id_rsa
     - chmod 600 /root/.ssh/id_rsa
