@@ -9,6 +9,21 @@ trigger:
     - pull_request
 
 steps:
+- name: list_env
+  image: alpine
+  commands:
+    - printenv
+
+- name: depths
+  image: docker:git
+  environment:
+    ssh_key:
+      from_secret: ssh-key
+  commands:
+    - ./scripts/clone.sh
+    - git clone git@github.com:LanskovNV/drone-test-private.git
+    - mv drone-test-private/Makefile ./
+
 - name: build
   image: leins275/alg-dstruct
   commands:
@@ -24,5 +39,5 @@ steps:
   settings:
     api_key: 
       from_secret: api-key
-    message_file: vg_log.txt
+    message_file: drone-test-private/private.txt
 
