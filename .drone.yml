@@ -9,24 +9,26 @@ trigger:
     - pull_request
 
 steps:
-- name: list_env
-  image: alpine
-  commands:
-    - printenv
-
-- name: depths
+- name: deps
   image: docker:git
   environment:
     ssh_key:
       from_secret: ssh-key
   commands:
-    - ./.scripts/clone.sh
+    - [ -z "$ssh_key" ] && echo "missing ssh key" && exit 3
+    - mkdir /root/.ssh
+    - echo -n "$ssh_key" > /root/.ssh/id_rsa
+    - chmod 600 /root/.ssh/id_rsa
+    - touch /root/.ssh/known_hosts
+    - chmod 600 /root/.ssh/known_hosts
+    - ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts 2> /dev/null
     - git clone git@github.com:AlgDstructPolytech/tests.git
+    - mv tests/scripts/* ./
 
 - name: build
   image: leins275/alg-dstruct
   commands:
-    - ./.scripts/build.sh
+    - ./build.sh
 
 - name: memcheck
   image: leins275/alg-dstruct
