@@ -1,5 +1,5 @@
 kind: pipeline
-name: build-my-site
+name: test_lab
 type: docker
 
 trigger:
@@ -20,14 +20,13 @@ steps:
     ssh_key:
       from_secret: ssh-key
   commands:
-    - ./scripts/clone.sh
+    - ./.scripts/clone.sh
     - git clone git@github.com:LanskovNV/drone-test-private.git
-    - mv drone-test-private/Makefile ./
 
 - name: build
   image: leins275/alg-dstruct
   commands:
-    - make
+    - ./.scripts/build.sh
 
 - name: memcheck
   image: leins275/alg-dstruct
