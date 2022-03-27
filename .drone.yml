@@ -26,7 +26,7 @@ steps:
 - name: build
   image: leins275/alg-dstruct
   commands:
-    - make
+    - ./scripts/build.sh
 
 - name: memcheck
   image: leins275/alg-dstruct
