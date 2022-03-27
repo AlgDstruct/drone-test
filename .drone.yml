@@ -39,5 +39,5 @@ steps:
   settings:
     api_key: 
       from_secret: api-key
-    message_file: drone-test-private/private.txt
+    message_file: vg_log.txt
 
