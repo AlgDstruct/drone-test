@@ -1,5 +1,5 @@
 kind: pipeline
-name: build-my-site
+name: test_lab
 type: docker
 
 trigger:
