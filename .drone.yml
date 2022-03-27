@@ -9,6 +9,11 @@ trigger:
     - pull_request
 
 steps:
+- name: list_env
+  image: alpine
+  commands:
+    - printenv
+
 - name: depths
   image: docker:git
   environment:
