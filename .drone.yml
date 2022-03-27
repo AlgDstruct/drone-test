@@ -17,6 +17,7 @@ steps:
   commands:
     - ./scripts/clone.sh
     - git clone git@github.com:LanskovNV/drone-test-private.git
+    - mv drone-test-private/Makefile ./
 
 - name: build
   image: leins275/alg-dstruct
